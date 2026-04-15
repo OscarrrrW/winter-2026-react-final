@@ -19,10 +19,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "npm run build:main",
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "build:main": "react-scripts build && rm -rf docs && mv build docs",
     "eject": "react-scripts eject",
     "start:code": "export PORT=10000 BROWSER=none && react-scripts start",
     "cy:runcode": "cypress run --env theport=10000",
